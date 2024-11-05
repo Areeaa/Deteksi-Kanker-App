@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.adapter
+package com.dicoding.asclepius.ui.adapter
 
 import android.annotation.SuppressLint
 import android.net.Uri
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.databinding.ItemListHistoryBinding
-import com.dicoding.asclepius.local.database.Result
+import com.dicoding.asclepius.data.local.database.Result
 
 
 class HistoryAdapter(private val results: List<Result>) : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {

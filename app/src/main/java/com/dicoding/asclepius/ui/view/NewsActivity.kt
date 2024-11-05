@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.view
+package com.dicoding.asclepius.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.asclepius.databinding.ActivityNewsBinding
-import com.dicoding.asclepius.viewmodel.NewsViewModel
+import com.dicoding.asclepius.ui.viewmodel.NewsViewModel
 
 class NewsActivity : AppCompatActivity() {
 

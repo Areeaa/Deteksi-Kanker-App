@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.view
+package com.dicoding.asclepius.ui.view
 
 import android.Manifest
 import android.content.Context
@@ -18,11 +18,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.local.database.Result
+import com.dicoding.asclepius.data.local.database.Result
 import com.dicoding.asclepius.databinding.ActivityMainBinding
 import com.dicoding.asclepius.helper.ImageClassifierHelper
-import com.dicoding.asclepius.viewmodel.MainViewModel
-import com.dicoding.asclepius.viewmodel.MainViewModelFactory
+import com.dicoding.asclepius.ui.viewmodel.MainViewModel
+import com.dicoding.asclepius.ui.viewmodel.MainViewModelFactory
 import com.yalantis.ucrop.UCrop
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.io.File

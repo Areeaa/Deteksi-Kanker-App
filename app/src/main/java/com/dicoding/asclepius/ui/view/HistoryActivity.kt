@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.view
+package com.dicoding.asclepius.ui.view
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.asclepius.adapter.HistoryAdapter
+import com.dicoding.asclepius.ui.adapter.HistoryAdapter
 import com.dicoding.asclepius.databinding.ActivityHistoryBinding
-import com.dicoding.asclepius.viewmodel.MainViewModel
-import com.dicoding.asclepius.viewmodel.MainViewModelFactory
+import com.dicoding.asclepius.ui.viewmodel.MainViewModel
+import com.dicoding.asclepius.ui.viewmodel.MainViewModelFactory
 import android.Manifest
 import android.util.Log
 import android.widget.Toast
@@ -51,7 +51,8 @@ class HistoryActivity : AppCompatActivity() {
             != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                 arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                REQUEST_CODE_PERMISSION)
+                REQUEST_CODE_PERMISSION
+            )
         }
     }
 

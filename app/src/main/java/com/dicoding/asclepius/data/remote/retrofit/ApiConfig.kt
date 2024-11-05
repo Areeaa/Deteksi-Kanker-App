@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.remote.retrofit
+package com.dicoding.asclepius.data.remote.retrofit
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,10 +1,10 @@
-package com.dicoding.asclepius.repository
+package com.dicoding.asclepius.data.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.dicoding.asclepius.local.database.Result
-import com.dicoding.asclepius.local.database.ResultDao
-import com.dicoding.asclepius.local.database.ResultDatabase
+import com.dicoding.asclepius.data.local.database.Result
+import com.dicoding.asclepius.data.local.database.ResultDao
+import com.dicoding.asclepius.data.local.database.ResultDatabase
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

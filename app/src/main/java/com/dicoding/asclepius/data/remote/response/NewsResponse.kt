@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.remote.response
+package com.dicoding.asclepius.data.remote.response
 
 data class NewsResponse(
 	val totalResults: Int,

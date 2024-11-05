@@ -1,12 +1,12 @@
-package com.dicoding.asclepius.viewmodel
+package com.dicoding.asclepius.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.asclepius.BuildConfig
-import com.dicoding.asclepius.remote.response.ArticlesItem
-import com.dicoding.asclepius.remote.retrofit.ApiConfig
+import com.dicoding.asclepius.data.remote.response.ArticlesItem
+import com.dicoding.asclepius.data.remote.retrofit.ApiConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

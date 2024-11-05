@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.local.database
+package com.dicoding.asclepius.data.local.database
 
 import android.content.Context
 import androidx.room.Database
