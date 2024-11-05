@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Asclepius</string>
+    <string name="gallery">Galeri</string>
+    <string name="analyze">Analyze</string>
+    <string name="result">Hasil Analisis</string>
+    <string name="image_classifier_failed">Gagal melakukan klasifikasi gambar, periksa log untuk detail selengkapnya</string>
+    <string name="empty_image_warning">Mohon input gambar</string>
+    <string name="result_not_available">Hasil tidak tersedia</string>
+    <string name="image_resource">Image Resource</string>
+    <string name="greetings">Hallo,\nMau ngapain\nhari ini?</string>
+    <string name="fab_to_detection">fab to detection</string>
+    <string name="banner_detection">banner detection</string>
+    <string name="news">Berita Kesehatan Kanker</string>
+    <string name="confidence">confidence score</string>
+    <string name="category_name">category name</string>
+    <string name="title">Judul artikel</string>
+    <string name="description">Deskripsi</string>
+    <string name="go_to_history">Go to History</string>
+    <string name="go_to_news">Go to News</string>
+    <string name="history">Histori Anda</string>
+    <string name="submission_by_dicoding">Submission by Dicoding</string>
+    <string name="deteksi_kanker_dengan_gambar">Deteksi Kanker\ndengan Gambar</string>
+    <string name="histori_klasifikasi_kanker">Histori Klasifikasi\nKanker</string>
+    <string name="berita_kanker">Baca Berita dan Artikel\nSeputar Kesehatan dan penyakit Kanker</string>
+    <string name="greetings_news">Hallo,\nMau baca apa\nHari ini?</string>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="Base.Theme.Asclepius" parent="Theme.Material3.DayNight.NoActionBar">
+
+
+        <item name="colorPrimaryDark">@color/pastel_purple</item>
+        <item name="colorPrimaryVariant">@color/pastel_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/pastel_green</item>
+        <item name="colorSecondaryVariant">@color/pastel_pink</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:colorBackground">@color/black</item>
+        <item name="colorOnBackground">@color/white</item>
+
+        <item name="colorSurface">@color/black</item>
+        <item name="colorOnSurface">@color/white</item>
+
+
+        <item name="android:statusBarColor">@color/pastel_blue</item>
+        <item name="android:navigationBarColor">@color/pastel_green</item>
+    </style>
+
+    <!-- Inheriting theme with pastel colors. -->
+    <style name="Theme.Asclepius" parent="Base.Theme.Asclepius" />
+</resources>

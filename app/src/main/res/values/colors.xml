@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna Dasar -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Warna Pastel -->
+    <color name="pastel_pink">#FFB3D1</color>
+    <color name="pastel_blue">#B7D6E7</color>
+    <color name="pastel_green">#B6E3E1</color>
+    <color name="pastel_yellow">#FFF9C4</color>
+    <color name="pastel_purple">#E2B2B2</color>
+</resources>
+
+
+
+
+
+
+
