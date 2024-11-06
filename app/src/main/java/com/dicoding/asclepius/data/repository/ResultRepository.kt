@@ -2,7 +2,7 @@ package com.dicoding.asclepius.data.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.dicoding.asclepius.data.local.database.Result
+import com.dicoding.asclepius.data.local.entity.Result
 import com.dicoding.asclepius.data.local.database.ResultDao
 import com.dicoding.asclepius.data.local.database.ResultDatabase
 import java.util.concurrent.ExecutorService

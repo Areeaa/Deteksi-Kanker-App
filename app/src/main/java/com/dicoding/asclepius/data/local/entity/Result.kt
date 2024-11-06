@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.data.local.database
+package com.dicoding.asclepius.data.local.entity
 
 import android.os.Parcelable
 import androidx.room.Entity

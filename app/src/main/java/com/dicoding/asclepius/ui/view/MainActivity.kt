@@ -18,7 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.data.local.database.Result
+import com.dicoding.asclepius.data.local.entity.Result
 import com.dicoding.asclepius.databinding.ActivityMainBinding
 import com.dicoding.asclepius.helper.ImageClassifierHelper
 import com.dicoding.asclepius.ui.viewmodel.MainViewModel
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageClassifierHelper: ImageClassifierHelper
     private lateinit var viewModel: MainViewModel
 
-    private val REQUIRED_PERMISSION = Manifest.permission.READ_EXTERNAL_STORAGE
+    private val requiredPermission = Manifest.permission.READ_EXTERNAL_STORAGE
 
     private val requestPermissionLauncher =
         registerForActivityResult(
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     private fun allPermissionsGranted() =
         ContextCompat.checkSelfPermission(
             this,
-            REQUIRED_PERMISSION
+            requiredPermission
         ) == PackageManager.PERMISSION_GRANTED
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
 
         if (!allPermissionsGranted()) {
-            requestPermissionLauncher.launch(REQUIRED_PERMISSION)
+            requestPermissionLauncher.launch(requiredPermission)
         }
 
         viewModel = ViewModelProvider(

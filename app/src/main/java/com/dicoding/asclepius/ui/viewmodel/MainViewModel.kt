@@ -3,7 +3,7 @@ package com.dicoding.asclepius.ui.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.dicoding.asclepius.data.local.database.Result
+import com.dicoding.asclepius.data.local.entity.Result
 import com.dicoding.asclepius.data.repository.ResultRepository
 
 class MainViewModel(application: Application): AndroidViewModel(application) {

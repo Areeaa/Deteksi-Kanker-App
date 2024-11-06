@@ -23,4 +23,6 @@
     <string name="histori_klasifikasi_kanker">Histori Klasifikasi\nKanker</string>
     <string name="berita_kanker">Baca Berita dan Artikel\nSeputar Kesehatan dan penyakit Kanker</string>
     <string name="greetings_news">Hallo,\nMau baca apa\nHari ini?</string>
+    <string name="greetings_history">Lihat Riwayat\nDeteksimu\ndi Sini</string>
+    <string name="greetings_main">Mulai \nDeteksi Kanker \nMenggunakan Gambar</string>
 </resources>
