@@ -13,7 +13,7 @@ data class ArticlesItem(
 	val description: String,
 	val source: Source,
 	val title: String,
-	val url: String?,
+	val url: String,
 	val content: String
 )
 

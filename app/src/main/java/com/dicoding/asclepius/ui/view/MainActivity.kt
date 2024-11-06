@@ -15,6 +15,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.R
@@ -31,9 +32,10 @@ import java.io.FileOutputStream
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var currentImageUri: Uri? = null
     private lateinit var imageClassifierHelper: ImageClassifierHelper
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by viewModels(){
+        MainViewModelFactory.getInstance(application)
+    }
 
     private val requiredPermission = Manifest.permission.READ_EXTERNAL_STORAGE
 
@@ -64,10 +66,6 @@ class MainActivity : AppCompatActivity() {
             requestPermissionLauncher.launch(requiredPermission)
         }
 
-        viewModel = ViewModelProvider(
-            this,
-            MainViewModelFactory.getInstance(application)
-        )[MainViewModel::class.java]
 
         imageClassifierHelper = ImageClassifierHelper(
             context = this,
@@ -85,10 +83,15 @@ class MainActivity : AppCompatActivity() {
         binding.galleryButton.setOnClickListener { startGallery() }
 
         binding.analyzeButton.setOnClickListener {
-            currentImageUri?.let { uri ->
+            viewModel.currentImageUri?.let { uri ->
                 analyzeImage(uri)
             } ?: showToast(getString(R.string.empty_image_warning))
         }
+
+        viewModel.currentImageUri?.let { uri ->
+            showImage()
+        }
+
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -118,10 +121,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startCrop(sourceUri: Uri) {
-        val destinationUri = Uri.fromFile(File(cacheDir, "cropped_image.jpg"))
+        val destinationUri = Uri.fromFile(File(cacheDir, "cropped_image_${System.currentTimeMillis()}.jpg"))
         UCrop.of(sourceUri, destinationUri)
-            .withAspectRatio(1f, 1f) // You can change the aspect ratio
-            .withMaxResultSize(500, 500) // Set maximum result size
+            .withAspectRatio(1f, 1f)
+            .withMaxResultSize(500, 500)
             .start(this)
     }
 
@@ -130,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
             val resultUri = UCrop.getOutput(data!!)
             if (resultUri != null) {
-                currentImageUri = resultUri
+                viewModel.currentImageUri = resultUri
                 showImage()
             } else {
                 showToast("Cropping failed!")
@@ -143,7 +146,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun showImage() {
-        currentImageUri?.let { uri ->
+        viewModel.currentImageUri?.let { uri ->
             Log.d("Image URI", "showImage: $uri")
             binding.previewImageView.setImageURI(uri)
         }
@@ -173,7 +176,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // simpan gambar ke bitmap
-        currentImageUri?.let { uri ->
+        viewModel.currentImageUri?.let { uri ->
 
             @Suppress("DEPRECATION")
             val bitmap: Bitmap? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -203,7 +206,7 @@ class MainActivity : AppCompatActivity() {
 
         // intent ke result activity
         val intent = Intent(this, ResultActivity::class.java).apply {
-            putExtra(ResultActivity.EXTRA_IMAGE_URI, currentImageUri.toString())
+            putExtra(ResultActivity.EXTRA_IMAGE_URI, viewModel.currentImageUri.toString())
             putExtra(ResultActivity.EXTRA_RESULT, resultString.toString())
         }
         startActivity(intent)
