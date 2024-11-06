@@ -25,4 +25,5 @@
     <string name="greetings_news">Hallo,\nMau baca apa\nHari ini?</string>
     <string name="greetings_history">Lihat Riwayat\nDeteksimu\ndi Sini</string>
     <string name="greetings_main">Mulai \nDeteksi Kanker \nMenggunakan Gambar</string>
+    <string name="greetings_result">Hasil \nAnalisis Gambar</string>
 </resources>
