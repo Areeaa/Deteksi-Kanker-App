@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.ui.view
+package com.dicoding.asclepius.ui.adapter
 
 
 import android.content.Intent

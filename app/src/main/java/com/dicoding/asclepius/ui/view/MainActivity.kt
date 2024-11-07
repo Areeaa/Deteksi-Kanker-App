@@ -17,7 +17,6 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.data.local.entity.Result
 import com.dicoding.asclepius.databinding.ActivityMainBinding
@@ -88,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             } ?: showToast(getString(R.string.empty_image_warning))
         }
 
-        viewModel.currentImageUri?.let { uri ->
+        viewModel.currentImageUri?.let {
             showImage()
         }
 
@@ -167,7 +166,8 @@ class MainActivity : AppCompatActivity() {
         result?.forEach { classification ->
             val itemCategory = classification.categories.maxByOrNull { it.score }
             itemCategory?.let { category ->
-                resultString.append("Terindikasi: ${category.label}\nKeakuratan: ${category.score * 100}%\n")
+                val score = (category.score * 100).toInt()
+                resultString.append("Status: ${category.label}\nConfidence Score: ${score}%\n")
                 if (category.score > highestConfidence) {
                     highestConfidence = category.score
                     highestCategory = category.label

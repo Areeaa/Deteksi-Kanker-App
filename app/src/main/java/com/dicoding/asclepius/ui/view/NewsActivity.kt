@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.asclepius.databinding.ActivityNewsBinding
+import com.dicoding.asclepius.ui.adapter.NewsAdapter
 import com.dicoding.asclepius.ui.viewmodel.NewsViewModel
 
 class NewsActivity : AppCompatActivity() {
